@@ -1,22 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { MainComponent } from './components/main.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  template: `
-    <nav>
-      <a href="/">Home</a>
-    </nav>
-    <router-outlet></router-outlet>
-  `,
+  imports: [RouterOutlet, MainComponent],
+  template: ` <jhd-main /> `,
   styles: [
     `
       :host {
         max-width: 1280px;
-        margin: 0 auto;
-        padding: 2rem;
         text-align: center;
       }
 
