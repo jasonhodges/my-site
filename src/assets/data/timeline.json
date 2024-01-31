@@ -1,0 +1,38 @@
+[
+  {
+    "date": "09/2013",
+    "company": "SIHO Insurance",
+    "side": "left",
+    "title": "Web Developer"
+  },
+  {
+    "date": "06/2016",
+    "company": "ClickFox",
+    "side": "right",
+    "title": "Software Engineer"
+  },
+  {
+    "date": "07/2017",
+    "company": "ClickFox",
+    "side": "right",
+    "title": "Senior UI Developer"
+  },
+  {
+    "date": "03/2018",
+    "company": "Charter Communications",
+    "side": "left",
+    "title": "Senior Application Developer"
+  },
+  {
+    "date": "06/2019",
+    "company": "Charter Communications",
+    "side": "left",
+    "title": "Principal Application Architect"
+  },
+  {
+    "date": "11/2020",
+    "company": "Aprimo",
+    "side": "right",
+    "title": "Senior Software Engineer IV - Architecture Team"
+  }
+]

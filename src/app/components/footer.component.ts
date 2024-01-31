@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Icons } from './ui/icons';
-import { SvgComponent } from './ui/svg.component';
+import SvgComponent from './ui/svg.component';
 
 @Component({
   selector: 'jhd-footer',

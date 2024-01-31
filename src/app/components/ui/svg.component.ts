@@ -3,7 +3,6 @@ import {
   Component,
   ElementRef,
   Input,
-  Renderer2,
   ViewChild,
 } from '@angular/core';
 
@@ -20,7 +19,7 @@ import {
       [attr.class]="class"></svg>
   `,
 })
-export class SvgComponent implements AfterViewInit {
+export default class SvgComponent implements AfterViewInit {
   @ViewChild('svg') svg!: ElementRef<SVGElement>;
   @Input()
   set path(value: string) {
@@ -28,10 +27,10 @@ export class SvgComponent implements AfterViewInit {
   }
   @Input() class = '';
   _path = '';
-  constructor(
-    private el: ElementRef<SVGElement>,
-    private renderer: Renderer2
-  ) {}
+  // constructor(
+  //   private el: ElementRef<SVGElement>,
+  //   private renderer: Renderer2
+  // ) {}
 
   ngAfterViewInit() {
     this.updateSvgPath(this._path);

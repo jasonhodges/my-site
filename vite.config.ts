@@ -12,13 +12,21 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     mainFields: ['module'],
   },
+  ssr: {
+    noExternal: ['daisyui/**'],
+  },
   plugins: [
     analog({
       prerender: {
-        routes: ['/', '/home', '/about', '/blog'],
+        routes: async () => ['/', '/home', '/about', '/blog', '/resume'],
         sitemap: {
           host: 'https://jasonhodges.dev',
         },
+      },
+      nitro: {
+        preset: 'vercel',
+        serveStatic: false,
+        externals: { inline: ['zone.js/node', 'tslib'] },
       },
     }),
   ],
