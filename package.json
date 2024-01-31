@@ -27,6 +27,7 @@
     "@angular/platform-server": "^17.0.0",
     "@angular/router": "^17.0.0",
     "@nx/angular": "~17.1.0",
+    "@vercel/analytics": "^1.1.2",
     "front-matter": "^4.0.2",
     "marked": "^5.0.2",
     "marked-gfm-heading-id": "^3.1.0",
