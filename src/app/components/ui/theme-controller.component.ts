@@ -3,7 +3,7 @@ import { Component, effect, inject, Renderer2, signal } from '@angular/core';
 @Component({
   selector: 'jhd-theme-controller',
   standalone: true,
-  template: ` <label class="swap swap-rotate">
+  template: ` <label class="swap swap-rotate align-middle">
     <!-- this hidden checkbox controls the state -->
     <input
       type="checkbox"
@@ -13,7 +13,7 @@ import { Component, effect, inject, Renderer2, signal } from '@angular/core';
 
     <!-- sun icon -->
     <svg
-      class="swap-on h-10 w-10 fill-current"
+      class="swap-on h-5 w-5 fill-current"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24">
       <path
@@ -22,7 +22,7 @@ import { Component, effect, inject, Renderer2, signal } from '@angular/core';
 
     <!-- moon icon -->
     <svg
-      class="swap-off h-10 w-10 fill-current"
+      class="swap-off h-5 w-5 fill-current"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24">
       <path

@@ -5,14 +5,13 @@
 
 /* You can add global styles to this file, and also import other style files */
 :root {
-  //font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  //background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,6 +20,25 @@
   -webkit-text-size-adjust: 100%;
 }
 
+html,
+body {
+  @apply flex min-h-screen w-full flex-auto flex-col antialiased;
+}
+
+//div {
+//  router-outlet {
+//    + * {
+//      position: relative;
+//      display: flex;
+//      flex: 1 1 auto;
+//      width: 100%;
+//      min-height: 100dvh;
+//      z-index: 99;
+//      @apply px-[0.5rem] py-6 sm:px-12 md:px-20 lg:p-6;
+//    }
+//  }
+//}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -28,16 +46,6 @@ a {
 }
 a:hover {
   color: #535bf2;
-}
-
-body {
-  margin: 0;
-  //height: 100%;
-  display: block;
-  place-items: center;
-  //min-width: 320px;
-  //min-height: 100vh;
-  flex-direction: column;
 }
 
 h1 {
@@ -64,10 +72,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.card {
-  padding: 2em;
-}
-
 .logo {
   @apply box-content;
 }
@@ -85,6 +89,29 @@ button:focus-visible {
   }
 }
 
+jhd-root {
+  @apply flex h-screen flex-col;
+}
+
+jhd-nav {
+  @apply sticky top-0 w-full z-50;
+}
+
+jhd-main {
+  @apply flex-1 overflow-y-scroll;
+}
+
+jhd-post-list {
+  @apply flex flex-col flex-wrap justify-center sm:flex-row gap-4;
+}
+
+jhd-post-card {
+  @apply w-full justify-center shadow-xl  sm:w-96;
+}
+
+jhd-footer {
+  @apply btm-nav btm-nav-lg sticky bottom-0 z-50 w-full;
+}
 
 //https://fonts.google.com/specimen/Cute+Font?classification=Display
 //https://fonts.google.com/specimen/Gruppo?classification=Display

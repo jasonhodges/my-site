@@ -1,24 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { FooterComponent } from './components/footer.component';
 import { MainComponent } from './components/main.component';
+import { NavComponent } from './components/nav.component';
 
 @Component({
-  selector: 'app-root',
+  selector: 'jhd-root',
   standalone: true,
-  imports: [RouterOutlet, MainComponent],
-  template: ` <jhd-main /> `,
-  styles: [
-    `
-      :host {
-        max-width: 1280px;
-        text-align: center;
-      }
-
-      nav {
-        text-align: left;
-        padding: 0 0 2rem 0;
-      }
-    `,
-  ],
+  imports: [MainComponent, NavComponent, FooterComponent],
+  template: `
+    <jhd-nav />
+    <jhd-main />
+    <jhd-footer />
+  `,
 })
 export class AppComponent {}

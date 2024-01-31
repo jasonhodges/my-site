@@ -8,15 +8,11 @@ import { NavComponent } from './nav.component';
   standalone: true,
   imports: [NavComponent, FooterComponent, RouterOutlet],
   template: `
-    <div class="flex h-screen flex-col overflow-hidden">
-      <jhd-nav />
-      <main class="flex-1 overflow-y-scroll bg-base-100">
-        <div class="mx-16">
-          <router-outlet></router-outlet>
-        </div>
-      </main>
-      <jhd-footer />
-    </div>
+    <main class="bg-base-100">
+      <div class="mx-16">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
   `,
   styles: ``,
 })

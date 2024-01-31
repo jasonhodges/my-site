@@ -10,10 +10,6 @@ export const routeMeta: RouteMeta = {
   selector: 'jhd-blog-page',
   standalone: true,
   imports: [RouterOutlet],
-  template: `
-    <!--    <h1>My Blog</h1>-->
-
-    <router-outlet />
-  `,
+  template: ` <router-outlet /> `,
 })
 export default class BlogPage {}

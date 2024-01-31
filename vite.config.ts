@@ -1,7 +1,7 @@
 /// <reference types="vitest" />
 
-import { defineConfig } from 'vite';
 import analog from '@analogjs/platform';
+import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -15,7 +15,10 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     analog({
       prerender: {
-        routes: ['/blog', '/blog/2022-12-27-my-first-post'],
+        routes: ['/', '/home', '/about', '/blog'],
+        sitemap: {
+          host: 'https://jasonhodges.dev',
+        },
       },
     }),
   ],
