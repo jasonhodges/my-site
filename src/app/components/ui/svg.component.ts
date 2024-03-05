@@ -1,8 +1,11 @@
+import { isPlatformBrowser } from '@angular/common';
 import {
   AfterViewInit,
   Component,
   ElementRef,
+  inject,
   Input,
+  PLATFORM_ID,
   ViewChild,
 } from '@angular/core';
 
@@ -27,13 +30,11 @@ export default class SvgComponent implements AfterViewInit {
   }
   @Input() class = '';
   _path = '';
-  // constructor(
-  //   private el: ElementRef<SVGElement>,
-  //   private renderer: Renderer2
-  // ) {}
+
+  platformId = inject(PLATFORM_ID);
 
   ngAfterViewInit() {
-    this.updateSvgPath(this._path);
+    isPlatformBrowser(this.platformId) ? this.updateSvgPath(this._path) : '';
   }
 
   private updateSvgPath(p: string): void {

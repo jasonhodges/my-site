@@ -5,8 +5,14 @@ import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  root: __dirname,
   publicDir: 'src/assets',
+  optimizeDeps: {
+    include: ['@angular/common'],
+  },
   build: {
+    reportCompressedSize: true,
+    commonjsOptions: { transformMixedEsModules: true },
     target: ['es2020'],
   },
   resolve: {

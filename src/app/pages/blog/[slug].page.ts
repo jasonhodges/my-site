@@ -4,10 +4,12 @@ import { Component } from '@angular/core';
 
 import PostAttributes from '../../models/post-attributes';
 
+// import 'prismjs/components/prism-javascript.js';
+
 @Component({
   selector: 'jhd-blog-post',
   standalone: true,
-  imports: [AsyncPipe, MarkdownComponent],
+  imports: [MarkdownComponent, AsyncPipe],
   template: `
     @if (post$ | async; as post) {
       <article>
