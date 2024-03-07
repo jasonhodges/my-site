@@ -15,7 +15,19 @@
             "configFile": "vite.config.ts",
             "main": "src/main.ts",
             "outputPath": "dist/client",
-            "tsConfig": "tsconfig.app.json"
+            "tsConfig": "tsconfig.app.json",
+            "styles": [
+              {
+                "inject": false,
+                "input": "src/styles/prism-colddark-dark.css",
+                "bundleName": "prismjs-dark"
+              },
+              {
+                "inject": false,
+                "input": "src/styles/prism-colddark-cold.css",
+                "bundleName": "prismjs-light"
+              }
+            ]
           },
           "defaultConfiguration": "production",
           "configurations": {

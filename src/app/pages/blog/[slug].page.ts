@@ -4,15 +4,18 @@ import { Component } from '@angular/core';
 
 import PostAttributes from '../../models/post-attributes';
 
-// import 'prismjs/components/prism-javascript.js';
+// import 'prismjs/components/prism-javascript';
 
 @Component({
   selector: 'jhd-blog-post',
   standalone: true,
   imports: [MarkdownComponent, AsyncPipe],
+  host: {
+    class: 'max-w-xl',
+  },
   template: `
     @if (post$ | async; as post) {
-      <article>
+      <article class="mx-auto max-w-3xl">
         <img class="post__image" [src]="post.attributes.coverImage" />
         <analog-markdown [content]="post.content" />
       </article>

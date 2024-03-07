@@ -119,7 +119,7 @@ Upon component destruction, we set `this.routerEventsUnsubscribe.complete()` so 
 ```
 In order to base the inkBar width off the tab text width, the `min-width` for `.mat-tab-link` had to be changed from `160px` to `fit-content`. `doSomething` receives a number for the index coorsponding to the active tab. First we grab the `offsetWidth` and `offsetLeft` of the `tabLink`'s nativeElement. 
 Since the default padding on the tabs was `24px` and the request was to have the inkBar extend `4px` for left and right sides of the tab text, we create a variable `widthMinusPadding` and assign it a value of `width - 40`. The `left` value of the inkBar also needed to be adjusted, hence the `leftMinus` const that was created. Utilizing the `renderer` functionallity from Angular, we can then remove the existing `width` and `left` style values from the inkBar and assign it the newly created values. These functions are wrapped in a `setTimeout` call to allow for the inkbar element to become available.
-```
+```ts
     doSomething(index: number) {
         const width = this.shopNav._tabLinks._results[index]._elementRef.nativeElement.offsetWidth;
         const left = this.shopNav._tabLinks._results[index]._elementRef.nativeElement.offsetLeft;

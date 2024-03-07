@@ -1,4 +1,5 @@
-import { Component, effect, inject, Renderer2, signal } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, inject, Renderer2, signal } from '@angular/core';
 
 @Component({
   selector: 'jhd-theme-controller',
@@ -34,7 +35,7 @@ export class ThemeControllerComponent {
   #renderer = inject(Renderer2);
   prefersDark: boolean = false;
   isDark = signal<boolean>(false);
-  constructor() {
+  constructor(@Inject(DOCUMENT) private document: Document) {
     const isBrowser = typeof window !== 'undefined';
     if (isBrowser) {
       //check the system theme
@@ -47,16 +48,32 @@ export class ThemeControllerComponent {
       // this.changeTheme(darkThemeQuery.matches);
     }
 
-    effect(() => {
-      console.log(`the theme has been switched : ${this.isDark()}`);
-    });
+    // effect(() => {
+    //   // console.log(`the theme has been switched : ${this.isDark()}`);
+    // });
   }
 
   switchTheme(dark: boolean) {
     const body = this.#renderer.selectRootElement('body', true) as HTMLElement;
+
     dark
       ? body.setAttribute('data-theme', 'nord')
       : body.setAttribute('data-theme', 'forest');
+
+    this.switchPrismTheme(dark);
+
     this.isDark.set(!dark);
+  }
+
+  switchPrismTheme(dark: boolean) {
+    const customLinkElement = this.document.getElementById(
+      'jhd-prismjs-theme'
+    ) as HTMLLinkElement | null;
+
+    if (customLinkElement) {
+      dark
+        ? (customLinkElement.href = `theme/prism-colddark-cold.css`)
+        : (customLinkElement.href = `theme/prism-colddark-dark.css`);
+    }
   }
 }

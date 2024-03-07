@@ -16,7 +16,7 @@ The three lines below reside in the directive template file.
 
 `liability-list.template.html`
 
-```HTML
+```html
 Available: {{ (t.UnitType == "Dollars") ? (t.UnitsAvailable | currency:'$') : (t.UnitsAvailable | number:0) }}
 Used: {{ (t.UnitType == "Dollars") ? (t.UnitsUsed | currency:"$") : (t.UnitsUsed | number:0) }}
 Max: {{ (t.UnitType == "Dollars") ? (t.UnitValue | currency:"$") : (t.UnitValue | number:0) }}
@@ -26,7 +26,7 @@ This is the directive that handles it all.
 
 
 `liabilityItem.directive.js`
-```JavaScript
+```js
 (function () {
   'use strict';
 
@@ -52,7 +52,7 @@ This is the directive that handles it all.
 Lastly, this is the snippet of code from within the index file of the view.  The 'tier' is an array of objects provided via controller.
 
 `index.html`
-```HTML
+```html
 <liability-Item
   ng-repeat="t in tier"
   item-data="t">

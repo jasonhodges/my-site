@@ -14,5 +14,7 @@ import { PostCardComponent } from './post-card.component';
   `,
 })
 export class PostListComponent {
-  readonly posts = injectContentFiles<PostAttributes>();
+  readonly posts = injectContentFiles<PostAttributes>(contentFile => {
+    return !contentFile.attributes.draft;
+  });
 }
